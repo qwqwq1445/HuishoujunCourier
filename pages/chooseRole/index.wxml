@@ -1,0 +1,4 @@
+<!--pages/chooseRole/index.wxml-->
+<van-dialog id="van-dialog" />
+<van-button custom-class="buttonL" type="warning" bindtap="goCleaner">社区志愿者</van-button>
+<van-button custom-class="buttonR" type="warning" bindtap="goCourier">上门回收君</van-button>

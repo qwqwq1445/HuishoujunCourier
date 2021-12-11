@@ -1,0 +1,26 @@
+<!--pages/orders/orders.wxml-->
+<van-row>
+  <van-col span="24">
+    <van-cell title="选择订单种类，当前种类：{{orderKind}}" bindtap="showPopup" />
+    <van-popup show="{{ show }}" position="bottom">
+      <van-picker columns="{{ orderkinds }}" show-toolbar="true" bind:cancel="onClose" bind:confirm="onConfirm"/>
+    </van-popup>
+  </van-col>
+</van-row>
+<van-row>
+  <van-col span="24">
+      <van-card wx:for="{{orderList}}"  wx:key="key" title="上门订单" desc="{{item.senderAddressShortened}}" thumb="/static/appoint.png">
+        <view slot="tag">
+          <van-tag custom-class="tag" mark type="danger" wx:if="{{item.senderUrgent}}">加急</van-tag>
+        </view>
+        <view slot="bottom"> 
+          <text class="time">{{item.senderDateBegin}}</text>
+        </view>
+        <view slot="footer">
+          <van-button id="{{item.orderId}}" type="info" size="mini" plain round bind:click="onDetail">详情</van-button>
+          <van-button id="{{item.orderId}}" type="primary" size="mini" plain round bind:click="onTaking" wx:if="{{orderKind=='分类订单'}}">领取</van-button>
+          <van-button id="{{item.orderId}}" type="primary" size="mini" plain round bind:click="onTaking" wx:else>进行</van-button>
+        </view>
+      </van-card>
+  </van-col>
+</van-row>

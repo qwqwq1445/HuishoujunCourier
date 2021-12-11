@@ -1,0 +1,21 @@
+/* pages/chooseRole/index.wxss */
+page{
+  background-image: url("https://636c-cloud1-0g663m90c834cf5f-1305863758.tcb.qcloud.la/RoleBack.png?sign=499f8a5c9590ccd3358dc93bbb8960bc&t=1621590773");
+  background-size:cover;
+}
+
+.buttonL{
+  position: fixed;
+  width:300rpx;
+  height:150rpx;
+  top: 1000rpx;
+  left: 50rpx;
+}
+
+.buttonR{
+  position: fixed;
+  width:300rpx;
+  height:150rpx;
+  top: 1000rpx;
+  left: 100rpx;
+}

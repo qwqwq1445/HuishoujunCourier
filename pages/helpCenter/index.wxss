@@ -1,0 +1,9 @@
+/* pages/helpCenter/index.wxss */
+.problem{
+  background-color: gray;
+  text-align: left;
+}
+
+.cell-class{
+  height: 100rpx;
+}

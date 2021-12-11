@@ -1,0 +1,25 @@
+<!--pages/reportingOrders/index.wxml-->
+<van-cell title="申报订单号" value="{{orderId}}" />
+<van-cell title="申报问题类型" />
+<van-dropdown-menu>
+  <van-dropdown-item title="{{title}}" value="{{ value1 }}" options="{{ option1 }}"  bind:change="onChange"/>
+</van-dropdown-menu>
+<van-cell title="申报具体情况" />
+<van-field type="textarea" value="{{ text }}" placeholder="请输入具体申报内容，不超过100字" size="large" maxlength="100" show-word-limit="true" clearable autosize preview-size="200px">
+</van-field>
+<van-dialog id="van-dialog" />
+
+<van-row>
+  <van-col span="24">
+    <van-panel title="上传证明图片" status="已上传{{listlength}}/8 张">
+      <van-uploader file-list="{{ fileList }}" multiple="true" deletable="true" max-count="8" bind:after-read="afterRead">
+      </van-uploader>
+    </van-panel>
+  </van-col>
+</van-row>
+<van-row>
+  <van-col offset="5">
+    <van-submit-bar button-text="提交申报" button-type="info" bind:submit="onSubmit">
+    </van-submit-bar>
+  </van-col>
+</van-row>

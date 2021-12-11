@@ -1,0 +1,60 @@
+<van-cell  value="{{orderId}}" title="订单号" icon="user-circle-o"></van-cell>
+<van-cell  value="{{senderName}}" title="用户名" icon="user-o"></van-cell>
+<van-cell  value="{{courierId}}" title="骑手号" icon="user-circle-o"></van-cell>
+<van-row>
+  <van-col span="24">
+    <van-panel title="开始时间：{{currentTime}}" desc="预约时间：{{date}}" >
+    </van-panel>
+  </van-col>
+</van-row>
+<van-row>
+  <van-col span="24">
+    <van-cell>
+      <van-button custom-class="button" icon="add=o" bind:click="onAddingTrash">添加垃圾种类</van-button>
+    </van-cell>
+  </van-col>
+</van-row>
+
+<van-popup
+  show="{{ show }}"
+  closeable
+  close-icon="close"
+  position="bottom"
+  custom-style="height: 40%"
+  bind:close="onClose"
+>
+  <van-dropdown-menu>
+    <van-dropdown-item value="{{ category }}" options="{{ categories }}" bind:change="onSwitch1Change"/>
+    <van-dropdown-item value="{{ kind }}" options="{{ kinds }}" bind:change="onSwitch2Change"/>
+  </van-dropdown-menu>
+  <van-field label="重量(kg)"  value="{{weight}}" placeholder="请输入重量，单位为kg" input-align="right" bind:change="onWeightChange"></van-field>
+  <van-cell title="积分(/kg)" value="{{kinds[kind].bonus}}"></van-cell>
+  <br/>
+  <van-row>
+   <van-col center span="16" offset="4">
+    <van-button custom-class="button" type="info" bind:click="onConfirmAdding">确定新增垃圾种类</van-button>
+   </van-col>
+  </van-row>
+</van-popup>
+<van-divider contentPosition="center"  customStyle="color: #1989fa; border-color: #1989fa; font-size: 12px;">垃圾种类及重量</van-divider>
+<van-dialog id="van-dialog" />
+
+<van-row>
+  <van-col span="24">
+    <van-swipe-cell wx:for="{{trashList}}"  id="{{item.id}}" right-width="{{ 65 }}" wx:key="key" async-close bind:close="onDelete">
+      <view slot="">
+        <van-card  title="{{item.trashKind}}" currency="环保积分：" price="{{item.integration}} "desc="" num="{{item.weight}}kg" thumb="/static/mm.png">
+        </van-card> 
+      </view>
+      <view class="right" slot="right">删除</view>
+    </van-swipe-cell>
+  </van-col>
+</van-row>
+
+<view class="standView"></view>
+<van-row>
+  <van-col offset="5">
+    <van-submit-bar custom-class="bar" button-text="完成订单" button-type="info" bind:submit="onSubmit">
+    </van-submit-bar>
+  </van-col>
+</van-row>

@@ -1,0 +1,30 @@
+<!--pages/appointOrders/index.wxml-->
+<van-dialog id="van-dialog" />
+
+<van-row>
+  <van-col span="24">
+    <van-cell title="选择辖区，当前辖区：{{AName}}" bindtap="showPopup" />
+    <van-popup show="{{ show }}" position="bottom">
+      <van-area area-list="{{ areaList }}" value="{{ACode}}" bind:cancel="onClose" bind:confirm="onConfirm"/>
+    </van-popup>
+  </van-col>
+</van-row>
+<van-row>
+  <van-col span="24">
+    <van-card wx:for="{{orderList}}" title="上门订单" desc="{{item.senderAddressShortened}}" wx:key="key" thumb="/static/appoint.png">
+      <view slot="bottom">
+        <text class="time">{{item.senderDateBegin}}</text>
+      </view>
+      <view slot="tag">
+        <van-tag custom-class="tag" mark type="danger" wx:if="{{item.senderUrgent}}">加急</van-tag>
+      </view>
+      <view slot="desc">
+        <van-tag type="warning" plain wx:if="{{item.isClassified=='0'}}">未分类</van-tag>
+        <van-tag type="success" plain wx:else>已分类</van-tag>
+      </view>
+      <view slot="footer">
+        <van-button id="{{item.orderId}}" type="info" size="mini" plain round bind:click="onOrderTaking">接单</van-button>
+      </view>
+    </van-card>
+  </van-col>
+</van-row>

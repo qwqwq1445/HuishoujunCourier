@@ -1,0 +1,8 @@
+/* pages/ordersTaking/index.wxss */
+.time{
+  font-size: 30rpx;
+  color: red;
+  }
+  .tag{
+    position:absolute!important;top:2px;left:0
+  }

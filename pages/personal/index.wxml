@@ -1,0 +1,20 @@
+<!--pages/personal/personal.wxml-->
+<van-row>
+  <van-col span="24">
+    <van-cell-group>
+      <van-field  value="{{ name }}" label="姓名" left-icon="user-o" placeholder="请输入姓名" bind:change="onNameChange" input-align="right"></van-field>
+      <van-field  value="{{ id }}" label="骑手ID" left-icon="user-circle-o" placeholder="待登录获取" readonly="true" input-align="right"></van-field>
+      <van-field  value="{{ credit }}" label="信誉分" left-icon="points" placeholder="待登录获取" readonly="true" input-align="right"></van-field>
+      <van-field  value="{{ orderNum }}" label="完成订单数" left-icon="hotel-o" readonly="true" input-align="right"></van-field>
+      <van-field  value="{{ idCard }}" label="身份证号" left-icon="idcard" placeholder="请输入身份证号"  bind:change="onIDChange" input-align="right"></van-field>
+      <van-field  value="{{ tel }}" label="电话号码"  left-icon="phone-o" placeholder="请输入电话号码"  bind:change="onTelChange" input-align="right"></van-field>
+      <van-field  value="{{ address }}" label="地址" left-icon="location-o" placeholder="请输入地址"  bind:change="onAddressChange" input-align="right"></van-field>
+    </van-cell-group>
+  </van-col>
+</van-row>
+<van-row>
+  <van-col offset="5">
+    <van-submit-bar button-text="更新信息" button-type="info" bind:submit="onSubmit">
+    </van-submit-bar>
+  </van-col>
+</van-row>

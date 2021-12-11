@@ -1,0 +1,34 @@
+/* pages/info/index.wxss */
+
+.info{
+  background-color: wheat;
+}
+
+.mine-back
+{
+  position: fixed;
+  z-index: -1;
+  bottom:0px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.userNickName{  
+  color: #101021; 
+  font-size: 14px;  
+}  
+.userInfoAvatar {  
+  overflow:hidden;  
+  display: block;  
+  width: 140rpx;  
+  height: 140rpx;  
+  margin: 20rpx;  
+  margin-top: 20rpx;
+  border-radius: 50%;  
+  border: 2px solid #fff;  
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);  
+}  
+.cell-class{
+  height: 120rpx;
+  background-color:yellow ;
+}
+  

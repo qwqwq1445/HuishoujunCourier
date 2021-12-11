@@ -1,0 +1,18 @@
+/**app.wxss**/
+page{
+  height: 100%;
+  background-image: url("https://636c-cloud1-0g663m90c834cf5f-1305863758.tcb.qcloud.la/%E8%83%8C%E6%99%AF%E5%8D%B0%E8%8A%B1.png?sign=6f5e9271fb76f6792cd82dba749b7bcb&t=1620910407");
+  background-size: cover;
+}
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+}
+.content {
+  background-color: "#CCFF00";
+}

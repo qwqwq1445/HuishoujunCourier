@@ -1,0 +1,37 @@
+<!--pages/openBin/openBin.wxml-->
+<van-row>
+  <van-col span="24" >
+    <van-card  title="{{place}}集中回收箱" thumb="/static/trash.jpg" centered="true">
+    </van-card>
+  </van-col>
+</van-row>
+<van-dialog id="van-dialog" />
+<van-row>
+  <van-col span="24">
+    <van-cell-group>
+      <van-cell size="large" title="垃圾种类" value="{{category}}"></van-cell>
+      <van-cell size="large" title="目前重量" value="{{weight}}"></van-cell>
+      <van-cell size="large" title="核载重量" value="{{maxweight}}"></van-cell>
+      <van-cell size="large" title="重量占比" value="{{weight}}%"></van-cell>
+    </van-cell-group>
+    <van-divider contentPosition="center"  customStyle="color: #1989fa; border-color: #1989fa; font-size: 12px;">已接收订单</van-divider>
+    <van-card wx:for="{{orderList}}"  wx:key="key" tag="进行中" desc="清箱订单" title="运单号：{{item.orderId}}" thumb="/static/deliver.png">
+      <view slot="bottom"> 
+        <text class="time">{{item.time}}</text>
+      </view>
+      <view slot="footer">
+        <van-button id="{{item.orderId}}" type="info" size="mini" plain round bind:click="onDetail">详情</van-button>
+        <van-button id="{{item.orderId}}" type="primary" size="mini" plain round bind:click="onTaking">领取</van-button>
+      </view>
+    </van-card>
+  </van-col> 
+</van-row>
+<view class="standView"></view>
+ <van-row>
+  <van-col offset="5">
+    <van-submit-bar button-text="{{function}}" button-type="info" bind:submit="onSubmit">
+        <view slot="tip">如多次开启不成功，请及时联系检修人员:12490</view>
+    </van-submit-bar>
+  </van-col>
+</van-row>
+

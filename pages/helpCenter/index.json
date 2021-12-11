@@ -1,0 +1,11 @@
+{
+  "navigationBarTitleText": "帮助中心",
+  "usingComponents": {
+    "van-row": "@vant/weapp/row/index",
+    "van-col": "@vant/weapp/col/index",
+    "van-cell-group": "@vant/weapp/cell-group/index",
+    "van-cell": "@vant/weapp/cell/index",
+    "van-tag": "@vant/weapp/tag/index",
+    "van-index-anchor": "@vant/weapp/index-anchor/index"
+  }
+}

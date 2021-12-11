@@ -1,0 +1,6 @@
+/* pages/binOrders/binOrders.wxss */
+.address{
+  font: normal;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #606060;
+  }

@@ -1,0 +1,43 @@
+<!--pages/info/index.wxml-->
+<van-row>
+  <van-col span="24">
+    <view wx:if="{{!hasUserInfo}}">
+      <van-row>
+        <van-col span="24">
+          <van-card  centered="true">
+            <view slot="thumb">
+              <image class="userInfoAvatar" src=""  bindtap="getUserProfile"></image>
+            </view>
+            <view class="userNickName" slot="title">
+              <text wx:if="{{canIUseGetUserProfile}}" bindtap="getUserProfile"> 获取头像昵称 </text>
+              <text wx:else open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </text>
+            </view>
+          </van-card>
+        </van-col>
+      </van-row>
+    </view>
+    <view wx:else>
+      <van-row>
+        <van-col span="24" >
+          <van-card  centered="true">
+            <view slot="thumb">
+              <image class="userInfoAvatar" src="{{userInfo.avatarUrl}}"></image>
+            </view>
+            <view class="userNickName" slot="title">
+              <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+            </view>
+          </van-card>
+        </van-col>
+      </van-row> 
+    </view>
+  </van-col>
+</van-row>
+<van-row>
+  <van-col span="24">
+    <van-cell-group>
+      <van-cell size="large" custom-class="cell-class" center icon="more-o" is-link title="我的信息" bindtap="onPersonal"></van-cell>
+      <van-cell size="large" custom-class="cell-class" center icon="completed" is-link title="完成订单" bindtap="onFinishedOrders"></van-cell>
+      <van-cell size="large" custom-class="cell-class" center icon="smile-o" is-link title="帮助中心" link-type="navigateTo" url="../helpCenter/index"></van-cell>
+    </van-cell-group>
+  </van-col> 
+</van-row>

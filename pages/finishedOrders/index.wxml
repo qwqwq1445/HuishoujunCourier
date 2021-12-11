@@ -1,0 +1,46 @@
+<!--pages/orders/orders.wxml-->
+<van-row>
+  <van-col span="24">
+    <van-cell title="选择订单种类，当前种类：{{orderKind}}" bindtap="showPopup" />
+    <van-popup show="{{ show }}" position="bottom">
+      <van-picker columns="{{ columns }}" show-toolbar="true" bind:cancel="onClose" bind:confirm="onConfirm"/>
+    </van-popup>
+  </van-col>
+</van-row>
+<van-row>
+  <van-col span="24">
+    <view wx:if="{{orderKind=='上门订单'}}">
+      <van-card wx:for="{{orderList}}"  wx:key="key" tag="已送达" title="上门订单" desc="订单号：{{item.orderId}}" thumb="/static/appoint.png">
+        <view slot="bottom"> 
+          <text>地址：{{item.senderAddressShortened}}</text>
+        </view>
+        <view slot="footer"> 
+          <van-button id="{{item.orderId}}" type="info" size="mini" plain round bindtap="onDetail">详情</van-button>
+        </view>
+      </van-card>
+    </view>
+    <view wx:if="{{orderKind=='清箱订单'}}">
+      <van-card wx:for="{{orderList}}"  wx:key="key" tag="已送达" title="清箱订单" thumb="/static/deliver.png">
+        <view slot="desc">
+          <van-tag type="warning" plain>{{item.category}}</van-tag>
+        </view>
+        <view slot="bottom"> 
+          <text>{{item.place}}</text>
+        </view>
+        <view slot="footer">
+          <van-button id="{{item.orderId}}" type="info" size="mini" plain round bindtap="onDetail">详情</van-button>
+        </view>
+      </van-card>
+    </view>
+    <view wx:if="{{orderKind=='保洁员订单'}}">
+      <van-card wx:for="{{orderList}}"  wx:key="key" tag="已完成" desc="保洁员订单" title="运单号：{{item.orderId}}" thumb="/static/modular.png">
+        <view slot="bottom"> 
+          <text>{{item.time}}</text>
+        </view>
+        <view slot="footer">
+          <van-button id="{{item.orderId}}" type="info" size="mini" plain round bindtap="onDetail">详情</van-button>
+        </view>
+      </van-card>
+    </view>
+  </van-col>
+</van-row>

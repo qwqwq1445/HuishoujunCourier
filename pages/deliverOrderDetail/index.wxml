@@ -1,0 +1,15 @@
+<!--pages/deliverOrderDetail/index.wxml-->
+<van-row>
+  <van-col span="24">
+    <van-cell-group>
+      <van-cell  value="{{ orderId }}" title="订单号" icon="coupon-o"></van-cell>
+      <van-cell  value="{{ userId }}" title="用户名" icon="user-o"></van-cell>
+      <van-cell  value="{{ time }}" title="订单创建时间" icon="clock-o"></van-cell>
+      <van-cell  value="" title="订单状态" icon="more-o"></van-cell>
+      <van-steps steps="{{ steps }}" active="{{ orderStatus }}" />
+      <van-cell  value="{{ place }}" title="投递地址" icon="hotel-o"></van-cell>
+      <van-cell  value="{{ category }}" title="垃圾种类"  icon="apps-o"></van-cell>
+      <van-cell  value="{{ weight }}" title="垃圾总重量"  icon="points"></van-cell>
+    </van-cell-group>
+  </van-col>
+</van-row>

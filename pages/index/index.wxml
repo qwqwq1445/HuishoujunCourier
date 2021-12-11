@@ -1,0 +1,31 @@
+<!--index.wxml-->
+<van-dialog id="van-dialog" />
+<van-row>
+  <van-col span="24">
+    <van-notice-bar left-icon="volume-o" text="成为最好的垃圾回收公司势不可挡！">
+    </van-notice-bar>
+  </van-col>
+</van-row>
+<van-row type="flex" justify="center">
+  <van-col span="24">
+    <van-grid suqare clickable direction="vertical" column-num="4">
+      <van-grid-item icon-size="100px" bindclick="onScanning" icon="enlarge" text="扫码开箱" ></van-grid-item>
+      <van-grid-item is-link icon="wap-home" text="上门接单" info="99+" bindtap="onTakingAorders"></van-grid-item>
+      <van-grid-item is-link icon="shop" text="清箱接单" info="99+" bindtap="onTakingDorders"></van-grid-item>
+      <van-grid-item is-link icon="location" bind:click="onMapping" text="路线规划" ></van-grid-item>
+    </van-grid>
+  </van-col>
+</van-row>
+<van-row>
+  <van-col span="24">
+    <van-cell-group>
+      <van-cell size="large" custom-class="cell-class" center icon="records" is-link title="进行中上门订单" bindtap="onAppointOrdersTaking"></van-cell>
+      <van-cell size="large" custom-class="cell-class" center icon="orders-o" is-link title="进行中清箱订单" bindtap="onDeliverOrdersTaking"></van-cell>
+      <van-cell size="large" custom-class="cell-class" center icon="friends-o" is-link title="保洁员交货"
+      bindtap="onCleanerOrders"></van-cell>
+      <van-cell size="large" custom-class="cell-class" center icon="info-o" is-link title="特殊订单申报"
+      bindtap="onReportOrders"></van-cell>
+    </van-cell-group>
+  </van-col> 
+</van-row>
+

@@ -1,0 +1,22 @@
+<!-- <van-row>
+  <van-col span="24">
+    <div class="text">"当前位置：{{gaodeAddress}}"</div>
+  </van-col>
+</van-row> -->
+<van-row>
+  <van-col span="24">
+    <div class="map_box"> 
+      <map id="navi_map" longitude="113.293197" latitude="22.80541" scale="12" markers="{{markers}}" polyline="{{polyline}}"></map>
+    </div>
+  </van-col>
+</van-row>
+
+<van-row>
+  <van-col span="24">
+    <div class="text_box">
+      <div class="text">{{distance}}</div>
+      <van-button round class="locate" size="small" type="info" bindtap="reLocate">重新定位</van-button>
+      <van-button round class="detail" size="small" type="info" bindtap="goDetail">详情</van-button>
+    </div>
+  </van-col>
+</van-row>

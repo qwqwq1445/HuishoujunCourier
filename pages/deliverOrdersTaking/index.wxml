@@ -1,0 +1,25 @@
+<!--pages/orders/orders.wxml-->
+<van-row>
+  <van-col span="24">
+    <van-cell title="选择绑定回收箱，当前回收箱：{{binName}}" bindtap="showPopup" />
+    <van-popup show="{{ show }}" position="bottom">
+      <van-picker columns="{{ columns }}" show-toolbar="true" bind:cancel="onClose" bind:confirm="onConfirm"/>
+    </van-popup>
+  </van-col>
+</van-row>
+<van-row>
+  <van-col span="24">
+      <van-card wx:for="{{orderList}}"  wx:key="key" tag="进行中" title="清箱订单" thumb="/static/deliver.png">
+        <view slot="desc">
+          <van-tag type="warning" plain>{{item.category}}</van-tag>
+        </view>
+        <view slot="bottom"> 
+          <text class="time">回收箱位置：{{item.place}}</text>
+        </view>
+        <view slot="footer">
+          <van-button id="{{item.orderId}}" type="info" size="mini" plain round bind:click="onDetail">详情</van-button>
+          <van-button id="{{item.orderId}}" type="primary" size="mini" plain round bind:click="onTaking">开箱</van-button>
+        </view>
+      </van-card>
+  </van-col>
+</van-row>

@@ -1,0 +1,13 @@
+/* pages/collectingOrders/collectingOrders.wxss */
+.address{
+  font: normal;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #606060;
+  }
+.time{
+  font-size: 30rpx;
+  color: red;
+}
+.tag{
+  position:absolute!important;top:2px;left:0
+}

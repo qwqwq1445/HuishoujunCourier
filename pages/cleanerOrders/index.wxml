@@ -1,0 +1,17 @@
+<!--pages/cleanerOrders/cleanerOrders.wxml-->
+<van-cell title="选择地区，当前地区：{{AName}}" bindtap="showPopup" />
+<van-popup show="{{ show }}" position="bottom">
+  <van-area area-list="{{ areaList }}" value="{{ACode}}" bind:cancel="onClose" bind:confirm="onConfirm"/>
+</van-popup>
+<van-row>
+  <van-col span="24">
+    <van-card clickable wx:for="{{orderList}}" tag="待接单" desc="保洁员订单" title="订单号：C{{item.number}}" wx:key="key" thumb="/static/user.png">
+      <view slot="bottom">
+        <text class="address">{{item.address}}</text>
+      </view>
+      <view slot="footer">
+        <van-button type="info" size="mini" plain round>接单</van-button>
+      </view>
+    </van-card>
+  </van-col>
+</van-row>

@@ -1,0 +1,14 @@
+{
+  "usingComponents": {
+    "van-cell-group": "@vant/weapp/cell-group/index",
+    "van-cell": "@vant/weapp/cell/index",
+    "van-col":"@vant/weapp/col/index",
+    "van-row":"@vant/weapp/row/index",
+    "van-card": "@vant/weapp/card/index",
+    "van-submit-bar":"@vant/weapp/submit-bar/index",
+    "van-tag":"@vant/weapp/tag/index",
+    "van-button":"@vant/weapp/button/index",
+    "van-divider":"@vant/weapp/divider/index",
+    "van-dialog": "@vant/weapp/dialog/index"
+  }
+}
